@@ -16,5 +16,13 @@
   "tsconfigRootDir": "."
 },
 "plugins": ["@typescript-eslint"],
-"rules": {}
+"rules": {
+  "quotes": [
+    "error",
+    "single"
+  ],
+  "no-extra-boolean-cast": [
+    0
+  ]
+}
 }
