@@ -2,16 +2,24 @@ import bodyParser from 'body-parser';
 import express from 'express';
 import db from './src/dbconnection';
 import AuthModule from './src/routes/auth/AuthModule';
+import {User} from './src/models/User';
 
 const app = express();
 
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-  res.send('Hello world')
-})
+// app.get('/', (req, res) => {
+//   res.send('Hello world')
+// })
 
 const auth = new AuthModule(app);
+console.log(auth)
+
+app.get('/', async (_, res) => {
+  const users = await User.find({});
+  const id = users[0].id;
+  res.send(JSON.stringify(id));
+})
 
 db()
   .then(() => {

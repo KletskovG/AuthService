@@ -1,8 +1,8 @@
 import { Express } from 'express';
 import md5 from 'md5';
 import { User } from '../../models/User';
-import IAuthData from 'src/Interfaces/IAuthData';
-import { validateEmail } from '@utils/validateEmail';
+import IAuthData from 'src/Interfaces/AuthData';
+import { validateEmail } from '../../utils/validateEmail';
 
 export const register = (app: Express) => {
   app.post('/auth/register',  async (req, res) => {
