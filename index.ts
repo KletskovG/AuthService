@@ -1,15 +1,17 @@
 import bodyParser from 'body-parser';
 import express from 'express';
 import db from './src/dbconnection';
+import AuthModule from './src/routes/auth/AuthModule';
 
 const app = express();
-
 
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.send('Hello world')
 })
+
+const auth = new AuthModule(app);
 
 db()
   .then(() => {
