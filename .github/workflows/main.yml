@@ -1,0 +1,19 @@
+name: Auth service CI
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node_version: [12]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build backend
+        run : |
+          npm i
+          npm run lint
+          npm run build

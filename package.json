@@ -4,7 +4,8 @@
   "description": "Microservice for authorization on Node.js and JWY",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "lint": "eslint -c .eslint.json --ext .ts src"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,9 @@
     "@types/express": "^4.17.6",
     "@types/md5": "^2.2.0",
     "@types/mongoose": "^5.7.20",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "eslint": "^7.0.0",
     "express": "^4.17.1",
     "md5": "^2.2.1",
     "mongoose": "^5.9.14",

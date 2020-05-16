@@ -1,11 +1,9 @@
 import { Express } from 'express';
 import md5 from 'md5';
+import { User } from '../../models/User';
 
 export const register = (app: Express) => {
   app.post('/auth/register', (req, res) => {
-    const str = req.body.login;
-
-    const hash = md5(str);
-    res.send(hash);
+    return
   });
 }
