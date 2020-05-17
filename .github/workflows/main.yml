@@ -12,7 +12,7 @@ jobs:
         node_version: [12]
     steps:
       - uses: actions/checkout@v2
-      - name: Build backend
+      - name: Build service
         run : |
           npm i
           npm run lint
@@ -20,7 +20,7 @@ jobs:
       - name: Publish service image to registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: ${{ secrets.BACKEND_IMAGE }}
+          name: ${{ secrets.SERVICE_IMAGE }}
           username: ${{ secrets.DOCKER_LOGIN }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Deploy
