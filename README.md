@@ -1,2 +1,2 @@
 # AuthService
-Microservice for authorization on Node.js and JWY
+Microservice for authorization on Node.js and JWT
